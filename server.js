@@ -16,16 +16,16 @@ const cors = require('cors');
 cron.schedule('*/30 * * * *', async () => {
     console.log("every thirty min")
 
-    // const klist = await listsToBePosted()
+    const klist = await listsToBePosted()
 
-    // const slice = klist.slice(0,7)
+    const slice = klist.slice(0,7)
 
-    // for(let i=0; i<slice.length; i++){
+    for(let i=0; i<slice.length; i++){
         
-    //     console.log(slice[i].title, slice[i].index)      
-    //     await postOne(slice[i].title, slice[i].index)
+        console.log(slice[i].title, slice[i].index)      
+        await postOne(slice[i].title, slice[i].index)
 
-    // }
+    }
 
 
     // await checkIfPostEditGoogle()
@@ -73,7 +73,7 @@ app.route('/new').get(async (req,res)=>{
 
     const klist = await listsToBePosted()
 
-    const slice = klist.slice(0,2)
+    const slice = klist.slice(0,1)
 
     for(let i=0; i<slice.length; i++){
         
